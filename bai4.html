@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paint rectangle</title>
+</head>
+<body>
+<canvas id="myCanvas" height="500" width="500" style="border: 1px solid black"></canvas>
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext('2d');
+
+    function Rectangle(x, y, width, height, color) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+
+        this.render = function () {
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    }
+
+    let rec = new Rectangle(10,10,200,100,'#000000');
+    rec.render();
+</script>
+</body>
+</html>
